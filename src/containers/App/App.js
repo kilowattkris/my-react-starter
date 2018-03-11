@@ -10,6 +10,8 @@ import toastr from 'toastr';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import "./App.scss";
+
 const Home = () => <Async load={import('../Home')} />;
 const LoginPage = () => <Async load={import('../LoginPage')} />;
 
@@ -54,10 +56,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <Switch>
-        <Route path="/login" component={LoginPage} />
-        <Route exact path="/" component={Home} />
-      </Switch>
+      <div className={'App '+ this.props.className}>
+        <Switch>
+          <Route path="/login" component={LoginPage} />
+          <Route exact path="/" component={Home} />
+        </Switch>
+      </div>
     );
   }
 }
@@ -75,6 +79,7 @@ const StyledApp = styled(App)`
     width: 100%;
     display: inline-block;
     position: relative;
+    background-color: blue;
   }
 `;
 

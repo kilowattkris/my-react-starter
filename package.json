@@ -31,7 +31,7 @@
         "lint:watch": "npm run lint -- --watch",
         "test": "jest",
         "test:watch": "npm run test -- --watch",
-        "prebuild": "npm-run-all dist:clean lint test",
+        "prebuild": "npm-run-all dist:clean lint",
         "build": "npm-run-all dist:build",
         "postbuild": "babel-node buildScripts/distServer.js",
         "dist:clean": "rimraf ./dist && mkdir dist",
